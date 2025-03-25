@@ -20,7 +20,8 @@
 1. Peyton - fault page + fault graph 📈 🎉🎉 - change naming with serde for types?
 2. Emir - Seg at a glance - basic set up done... waiting on me for changes to handling different segment inputs
 3. Karim - pie chart - just make those few changes and it's merged
-4. Justin - abstract Angular form / run edit - hardest part finished, 1) main thing: hook up backend, 2) second style 
+4. Justin - abstract Angular form / run edit - hardest part finished, 1) main thing: hook up backend, 2) second style
+
 ## Jack Questions
 1. What can we put in too companion component?
 2. Yell at harrison to fix mock? lol 
