@@ -25,3 +25,5 @@
 1. What can we put in too companion component?
 2. Yell at harrison to fix mock? lol 
 3. Agree with Reids graph screen ticket.
+
+
