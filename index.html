@@ -4,26 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Docsify Site</title>
-    <!-- Docsify Vue theme -->
+    <!-- Docsify Vue Theme (light mode styling) -->
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-    <!-- GitHub Markdown CSS for GitHub-like styling -->
+    <!-- GitHub Markdown CSS for GitHub-like markdown styling -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
     <style>
-      /* Optionally, add some custom tweaks */
-      body {
-        padding: 20px;
+      /* Ensure the Docsify container gets GitHub Markdown styles */
+      /* This plugin hook below will add "markdown-body" to the content */
+      
+      /* Custom dark mode overrides for GitHub Markdown CSS */
+      body.dark .markdown-body {
+        background-color: #0d1117;
+        color: #c9d1d9;
       }
+      body.dark .markdown-body a {
+        color: #58a6ff;
+      }
+      /* You can add further dark mode customizations as needed */
     </style>
   </head>
   <body>
-    <!-- Add the "markdown-body" class to apply GitHub styles -->
-    <div id="app" class="markdown-body"></div>
+    <div id="app"></div>
 
     <script>
+      // Docsify configuration
       window.$docsify = {
-        homepage: 'meeting_notes.md'
-      }
+        homepage: 'meeting_notes.md',
+        // Use a plugin hook to add "markdown-body" class to each markdown section
+        plugins: [
+          function(hook, vm) {
+            hook.doneEach(function() {
+              document.querySelectorAll('.markdown-section').forEach(el => {
+                el.classList.add('markdown-body');
+              });
+            });
+          }
+        ]
+      };
     </script>
+
+    <!-- Docsify Core -->
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <!-- Docsify Dark Mode Plugin -->
+    <script src="//unpkg.com/docsify-dark-mode/dist/docsify-dark-mode.min.js"></script>
   </body>
 </html>
