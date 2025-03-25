@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Docsify Site</title>
+    <!-- Docsify Vue theme -->
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <!-- GitHub Markdown CSS for GitHub-like styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <style>
+      /* Optionally, add some custom tweaks */
+      body {
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <!-- Set meeting_notes.md as the homepage -->
+    <!-- Add the "markdown-body" class to apply GitHub styles -->
+    <div id="app" class="markdown-body"></div>
+
     <script>
       window.$docsify = {
         homepage: 'meeting_notes.md'
